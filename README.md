@@ -2,7 +2,8 @@
 Integrantes del Equipo
 - Juan Esteban Ballesteros
 - Aylin Velasquez de la Ossa
-- Omar Daniel Hernández 
+- Omar Daniel Hernández
+
 rouge Atelier es una plataforma de comercio electronico interactiva orientada a la venta de productos de maquillaje y cuidado personal de marcas reconocidas como Dior, e.l.f., KIKO Milano y Benefit. Hemos diseñado un prototipo de alta fidelidad para simular una experiencia de usuario fluida, moderna y visualmente atractiva en tonos burdeos y minimalistas. Funcionalidades Principales
 - Login y Registro: Pantalla de autenticación con cuentas de prueba diferenciadas para usuario y administrador.
 - Opciones de Usuario y Administrador: Vistas adaptadas según el rol para gestionar la navegación o el panel de control.
