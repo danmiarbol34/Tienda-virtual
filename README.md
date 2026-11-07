@@ -45,4 +45,5 @@ rouge Atelier es una plataforma de comercio electronico interactiva orientada a 
 
 ## 🔗 Enlace al Prototipo Interactivo
 Puedes probar el prototipo completo directamente en Figma haciendo clic en el siguiente enlace:
-👉 [Ver Prototipo de Rouge Atelier en Figma](https://www.figma.com/make/cwLYH8ICQMCLCMa6wmzw83/Tienda-Virtual-de-Maquillaje?t=DCF5vZBBYwS27f4G-1)
+👉 [Ver Prototipo de Rouge Atelier en Figma](https://www.figma.com/make/cwLYH8ICQMCLCMa6wmzw83/Tienda-Virtual-de-Maquillaje?t=Z7uO1TreTkdOw1o7-1)
+prototipo interactivo finalizado y listo para entrega en CINTIA.
