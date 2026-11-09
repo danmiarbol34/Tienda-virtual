@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.TiendaControlador">
+    <top>
+        <fx:include fx:id="encabezado" source="Encabezado.fxml" />
+    </top>
+    <center>
+        <StackPane>
+            <children>
+                <ScrollPane fitToWidth="true">
+                    <content>
+                        <VBox>
+                            <children>
+                                <StackPane>
+                                    <padding>
+                                        <Insets left="24.0" right="24.0" />
+                                    </padding>
+                                    <children>
+                                        <VBox fx:id="contenido" maxWidth="1100.0" spacing="6.0">
+                                            <padding>
+                                                <Insets bottom="50.0" top="40.0" />
+                                            </padding>
+                                            <children>
+                                                <Label styleClass="titulo,serif" text="Catálogo" />
+                                                <Label styleClass="subtitulo" text="Descubre nuestros productos de maquillaje y cuidado personal" />
+                                                <HBox alignment="CENTER_LEFT" spacing="12.0">
+                                                    <VBox.margin>
+                                                        <Insets top="20.0" />
+                                                    </VBox.margin>
+                                                    <children>
+                                                        <TextField fx:id="txtBusqueda" promptText="Buscar por nombre, marca o descripción..." styleClass="campo" HBox.hgrow="ALWAYS" />
+                                                        <ComboBox fx:id="cmbOrden" style="-fx-background-color: white; -fx-border-color: #E8C9C9; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 6 8 6 8;">
+                                                            <items>
+                                                                <FXCollections fx:factory="observableArrayList">
+                                                                    <String fx:value="Nombre (A-Z)" />
+                                                                    <String fx:value="Precio: menor a mayor" />
+                                                                    <String fx:value="Precio: mayor a menor" />
+                                                                </FXCollections>
+                                                            </items>
+                                                        </ComboBox>
+                                                    </children>
+                                                </HBox>
+                                                <Label fx:id="lblSinResultados" managed="false" styleClass="subtitulo" text="No encontramos productos con esa búsqueda." visible="false" />
+                                                <FlowPane fx:id="grilla" hgap="24.0" vgap="24.0">
+                                                    <VBox.margin>
+                                                        <Insets top="20.0" />
+                                                    </VBox.margin>
+                                                </FlowPane>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </StackPane>
+                                <VBox alignment="CENTER" spacing="4.0" styleClass="pie">
+                                    <children>
+                                        <Label styleClass="pie-logo,serif" text="Rouge.Atelier" />
+                                        <Label styleClass="pie-texto" text="Tienda virtual de maquillaje" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+                <StackPane fx:id="capa" onKeyPressed="#teclaCapa" onMouseClicked="#clicCapa" style="-fx-background-color: rgba(42,7,13,0.55);" visible="false" />
+            </children>
+        </StackPane>
+    </center>
+</BorderPane>
