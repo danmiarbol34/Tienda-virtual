@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.EncabezadoControlador">
+    <children>
+        <StackPane styleClass="anuncio">
+            <children>
+                <Label styleClass="anuncio-texto" text="ENVÍO GRATIS EN COMPRAS DESDE $50 USD" />
+            </children>
+        </StackPane>
+        <HBox alignment="CENTER_LEFT" spacing="18.0" styleClass="navbar">
+            <padding>
+                <Insets bottom="14.0" left="120.0" right="120.0" top="14.0" />
+            </padding>
+            <children>
+                <Label styleClass="logo,serif" text="Rouge.Atelier" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button styleClass="nav-link" text="Catálogo" />
+                <Button fx:id="btnMisCompras" styleClass="nav-link" text="Mis compras" />
+                <Button fx:id="btnAdministracion" styleClass="nav-link" text="Administración" />
+                <Button styleClass="nav-link" text="♡" />
+                <Button styleClass="nav-link" text="🛍" />
+                <Button fx:id="btnIngresar" styleClass="nav-pildora" text="Ingresar" />
+                <Label fx:id="lblUsuario" styleClass="nav-usuario" />
+                <Button fx:id="btnSalir" onAction="#salir" styleClass="nav-pildora-borde" text="Salir" />
+            </children>
+        </HBox>
+    </children>
+</VBox>
