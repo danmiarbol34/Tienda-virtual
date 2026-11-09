@@ -1,35 +1,52 @@
 package controlador;
 
 import java.util.function.Consumer;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import modelo.Tienda;
 import modelo.Usuario;
-import vista.LoginVista;
 
 public class LoginControlador {
 
-    private final LoginVista vista;
-    private final Tienda tienda;
-    private final Consumer<Usuario> alIngresar;
+    @FXML
+    private EncabezadoControlador encabezadoController;
+    @FXML
+    private TextField txtCorreo;
+    @FXML
+    private PasswordField txtContrasena;
+    @FXML
+    private Label lblError;
 
-    public LoginControlador(LoginVista vista, Tienda tienda, Consumer<Usuario> alIngresar) {
-        this.vista = vista;
+    private Tienda tienda;
+    private Consumer<Usuario> alIngresar;
+
+    public void iniciar(Tienda tienda, Consumer<Usuario> alIngresar) {
         this.tienda = tienda;
         this.alIngresar = alIngresar;
-        vista.getBtnIngresar().setOnAction(e -> iniciarSesion());
+        encabezadoController.configurar(null, null);
     }
 
+    @FXML
     private void iniciarSesion() {
-        String correo = vista.getCorreo();
-        String contrasena = vista.getContrasena();
+        String correo = txtCorreo.getText();
+        String contrasena = txtContrasena.getText();
         if (correo.isBlank() || contrasena.isEmpty()) {
-            vista.mostrarError("Ingresa tu correo y contraseña.");
+            mostrarError("Ingresa tu correo y contraseña.");
             return;
         }
         Usuario usuario = tienda.autenticar(correo, contrasena);
         if (usuario == null) {
-            vista.mostrarError("Correo o contraseña incorrectos.");
+            mostrarError("Correo o contraseña incorrectos.");
             return;
         }
         alIngresar.accept(usuario);
+    }
+
+    private void mostrarError(String mensaje) {
+        lblError.setText(mensaje);
+        lblError.setManaged(true);
+        lblError.setVisible(true);
     }
 }
