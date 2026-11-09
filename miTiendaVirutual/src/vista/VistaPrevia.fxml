@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" spacing="28.0" styleClass="producto-tarjeta" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.VistaPreviaControlador">
+    <padding>
+        <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+    </padding>
+    <children>
+        <ImageView fx:id="imagen" fitHeight="340.0" fitWidth="340.0" />
+        <VBox prefWidth="340.0" spacing="8.0">
+            <children>
+                <Label fx:id="lblMarca" styleClass="producto-marca" />
+                <Label fx:id="lblNombre" style="-fx-font-size: 28px;" styleClass="titulo,serif" wrapText="true" />
+                <Label fx:id="lblPresentacion" styleClass="producto-presentacion" />
+                <Label fx:id="lblDescripcion" style="-fx-font-size: 14px;" styleClass="producto-descripcion" wrapText="true" />
+                <Region VBox.vgrow="ALWAYS" />
+                <Label fx:id="lblPrecio" style="-fx-font-size: 22px;" styleClass="producto-precio" />
+                <Label fx:id="lblStock" styleClass="producto-presentacion" />
+                <HBox spacing="10.0">
+                    <children>
+                        <Button styleClass="boton-agregar" text="Agregar al carrito" />
+                        <Button onAction="#cerrar" styleClass="boton-corazon" text="Cerrar" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</HBox>
